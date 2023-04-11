@@ -1,0 +1,35 @@
+{% extends "reusable/base.html"  %}
+
+{% block title %}
+    Personal Schedule
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <table class="table table-light table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">Role</th>
+          <th scope="col">Start</th>
+          <th scope="col">End</th>
+        </tr>
+      </thead>
+      {% for week_day, one_day_shifts in shifts %}
+        <thead>
+          <tr class="table-primary">
+            <th scope="col" colspan="3">{{ week_day }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for shift in one_day_shifts %}
+              <tr>
+                <td scope="row">{{ shift.role }}</td>
+                <td>{{shift.start}}</td>
+                <td>{{shift.end}}</td>
+              </tr>
+          {% endfor %}
+        </tbody>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock content %}

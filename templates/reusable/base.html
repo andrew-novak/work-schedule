@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <title>{% block title %}{% endblock title %}</title>
+
+        {% load django_bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+    <body>
+        {% include "reusable/snackbar.html" %}
+        {% include "reusable/nav_bar.html" %}
+        {% block content %}{% endblock content %}
+    </body>
+</html>
