@@ -1,7 +1,9 @@
 from django.urls import path
 from .views import home_screen_view, personal_schedule_view
+from django.urls import path, include
 
 urlpatterns = [
-    path("", home_screen_view, name="home"),
-    path("personal-schedule/", personal_schedule_view, name="personal_schedule")
+    path('', include('django.contrib.auth.urls')),
+    path('', home_screen_view, name="home"),
+    path('personal-schedule/', personal_schedule_view, name='personal_schedule')
 ]

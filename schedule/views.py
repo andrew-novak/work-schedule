@@ -9,9 +9,11 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 
 def home_screen_view(request):
-    return render(request, "screens/personal_schedule.html")
+    return redirect("personal_schedule")
 
 def personal_schedule_view(request):
+    if not request.user.is_authenticated:
+        return redirect("login") 
     shifts = {
         "Monday": [
             {"role": "Programming", "start": "8:00", "end": "16:00"}
