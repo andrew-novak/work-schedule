@@ -6,6 +6,7 @@
 
 {% block content %}
   <div class="container">
+    <h4 class="mt-3 mb-4">Personal Schedule</h4>
     <table class="table table-light table-borderless">
       <thead>
         <tr>
@@ -28,6 +29,9 @@
                 <td>{{shift.end}}</td>
               </tr>
           {% endfor %}
+          <tr>
+            <td colspan="3"></td>
+          </tr>
         </tbody>
       {% endfor %}
     </table>

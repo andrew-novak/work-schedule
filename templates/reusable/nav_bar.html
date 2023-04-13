@@ -1,7 +1,7 @@
 <div class="container">
     <nav class="navbar navbar-light navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Work Schedule</a>
+            <a class="navbar-brand" href="{% url "personal_schedule" %}">Work Schedule</a>
 
             {% if not request.user.is_authenticated and request.resolver_match.url_name != "login" %}
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
