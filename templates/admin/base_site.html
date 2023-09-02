@@ -1,0 +1,26 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+{% block extrahead %}
+    {{ block.super }}
+
+    <link rel="stylesheet" href="{% static 'styles/admin.css' %}">
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">
+        <a href="{% url 'admin:index' %}">
+            <img id="branding-icon-admin" src="{% static "icons/icon-small.png" %}" alt="Icon">
+            Work Schedule - Manager Panel
+        </a>
+    </h1>
+{% endblock %}
+
+{% block userlinks %}
+    <div id="user-tools" class="user-tools">
+        <a href="{% url 'home' %}">View Schedule</a>
+        <a href="{% url 'admin:auth_user_change' user.id %}">Profile</a>
+        <a href="{% url 'admin:logout' %}">Logout</a>
+    </div>
+{% endblock %}

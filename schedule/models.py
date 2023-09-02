@@ -5,3 +5,6 @@ class Shift(models.Model):
     date = models.DateField()
     start = models.TimeField()
     end = models.TimeField()
+
+    def __str__(self):
+        return f"{self.user} - {self.date}" 

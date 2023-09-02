@@ -1,0 +1,29 @@
+#branding-icon-user {
+    height: 64px;
+    width: 64px;
+    border-radius: 100%;
+}
+.week_with_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+.week_with_buttons p {
+    padding: 0;
+    margin: 0;
+}
+.week-arrow-button {
+    background-color: #f8ebe3;
+}
+.week-arrow-button:hover {
+    background-color: #e2c5b5;
+}
+.week-arrow-button:active:hover {
+    background-color: #e2c5b5;
+}
+table.table.table-light.table-borderless thead tr.table-primary th {
+    background-color: #E7804A;
+}
