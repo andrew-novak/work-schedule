@@ -11,7 +11,24 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import sys
 import os
+import environ
+
+env = environ.Env()
+
+PORT = 3000
+
+if "runserver" in sys.argv:
+    try:
+        from django.core.management.commands.runserver import Command as runserver
+        runserver.default_port = str(PORT)
+    except ImportError:
+        pass
+else:
+    # System environment variables
+    PORT = env.int("WORK_SCHEDULE_PORT", default=PORT)
+ 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

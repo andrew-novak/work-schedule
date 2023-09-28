@@ -32,7 +32,7 @@ def personal_schedule_view(request):
     previous_monday = monday - timedelta(days=7)
     next_monday = monday + timedelta(days=7)
 
-    week_string = f"{monday.strftime('%B %d')} - {sunday.strftime('%B %d, %Y')}"
+    week_string = f"{monday.strftime('%d %b')} - {sunday.strftime('%d %b, %Y')}"
 
     #shifts = request.user.shift_set.values()
     one_week_shifts = Shift.objects.filter(user=request.user, date__range=[monday, sunday])
