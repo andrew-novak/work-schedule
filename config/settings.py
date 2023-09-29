@@ -93,11 +93,22 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+if not ("runserver" in sys.argv):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': env.str("WORK_SCHEDULE_DB_NAME", default="work-schedule"),
+            'USER': env.str("WORK_SCHEDULE_DB_USER", default="work-schedule"),
+            'PASSWORD': env.str("WORK_SCHEDULE_DB_PASSWORD"),
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
 
 
 # Password validation
