@@ -33,6 +33,7 @@
 3. Go to project root dir
 4. Create your own virtual environment:
    `python3 -m venv venv`
+   (note you can run e.g. `python3.8` if `python3` is lower version than 3.8.x)
 5. Load virtual environment:
    `source venv/bin/activate`
 6. Install dependiencies
