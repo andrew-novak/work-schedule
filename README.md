@@ -25,10 +25,14 @@
 ### To run in production:
 
 1. Set environment variables:
+   `WORK_SCHEDULE_HOST`
    `WORK_SCHEDULE_PORT`
    `WORK_SCHEDULE_DB_NAME`
    `WORK_SCHEDULE_DB_USER`
    `WORK_SCHEDULE_DB_PASSWORD`
+   `WORK_SCHEDULE_STATIC_ROOT`
+   Optional:
+   `WORK_SCHEDULE_SUBLOCATION`
 2. Clone repo
 3. Go to project root dir
 4. Create your own virtual environment:
@@ -42,6 +46,9 @@
 7. Make your migrations:
    `python manage.py makemigrations`
    `python manage.py migrate`
-8. Create a new superuser:
+8. Place static files in STATIC_ROOT:
+   `python manage.py collectstatic`
+9. Create a new superuser:
    `python manage.py createsuperuser`
-9. ............
+10. Start:
+    `gunicorn config.wsgi:application -b 0.0.0.0:$WORK_SCHEDULE_PORT --settings=config.settings_prod`
