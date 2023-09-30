@@ -6,23 +6,39 @@
 
 ### To run in development:
 
-1. Clone repo
-2. Go to project root dir
+1. Clone repo:
+   ```
+   git clone https://github.com/andrew-novak/work-schedule work-schedule
+   ```
+2. Go to project root dir:
+   ```
+   cd work-schedule
+   ```
 3. Create your own virtual environment:
-   `python3 -m venv venv`
+   ```
+   python3 -m venv venv
+   ```
 4. Load virtual environment:
-   `source venv/bin/activate`
-5. Install dependiencies
-   `pip install -r requirements.txt`
+   ```
+   source venv/bin/activate
+   ```
+5. Install dependiencies:
+   ```
+   pip install -r requirements.txt
+   ```
 6. Make your migrations:
    ```
    python manage.py makemigrations
    python manage.py migrate
    ```
 7. Create a new superuser:
-   `python manage.py createsuperuser`
+   ```
+   python manage.py createsuperuser
+   ```
 8. Run development server:
-   `python manage.py runserver`
+   ```
+   python manage.py runserver
+   ```
 
 ### To run in production:
 
@@ -41,15 +57,23 @@
    ```
    WORK_SCHEDULE_SUBLOCATION
    ```
-2. Clone repo
-3. Go to project root dir
+2. Clone repo:
+   ```
+   git clone https://github.com/andrew-novak/work-schedule work-schedule
+   ```
+3. Go to project root dir:
+   ```
+   cd work-schedule
+   ```
 4. Create your own virtual environment:
    ```
    python3 -m venv venv
    ```
    (note you can run e.g. `python3.8` if `python3` is lower version than 3.8.x)
 5. Load virtual environment:
-   `source venv/bin/activate`
+   ```
+   source venv/bin/activate
+   ```
 6. Install dependiencies
    ```
    pip install -r requirements.txt
@@ -61,8 +85,14 @@
    python manage.py migrate
    ```
 8. Place static files in STATIC_ROOT:
-   `python manage.py collectstatic`
+   ```
+   python manage.py collectstatic
+   ```
 9. Create a new superuser:
-   `python manage.py createsuperuser`
+   ```
+   python manage.py createsuperuser
+   ```
 10. Start:
-    `gunicorn config.wsgi:application -b 0.0.0.0:$WORK_SCHEDULE_PORT --settings=config.settings_prod`
+    ```
+    gunicorn config.wsgi:application -b 0.0.0.0:$WORK_SCHEDULE_PORT
+    ```
