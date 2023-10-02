@@ -2,14 +2,14 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import environ
 
-env = environ.Env()
-is_production = env.bool('WORK_SCHEDULE_IS_PRODUCTION', default=False)
+from config.env import env_vars
+
+IS_PRODUCTION = env_vars.get("IS_PRODUCTION")
 
 def main():
     """Run administrative tasks."""
-    if is_production:
+    if IS_PRODUCTION == True:
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_prod')
     else:
         os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_dev')

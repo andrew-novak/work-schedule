@@ -7,6 +7,7 @@ is_runserver = "runserver" in sys.argv
 env_vars = {}
 if not is_runserver:
     env_vars = {
+        "IS_PRODUCTION": env.bool("WORK_SCHEDULE_IS_PRODUCTION"),
         "HOST": env.str("WORK_SCHEDULE_HOST"),
         "DJANGO_SECRET_KEY": env.str("WORK_SCHEDULE_DJANGO_SECRET_KEY"),
         "DB_NAME": env.str("WORK_SCHEDULE_DB_NAME"),

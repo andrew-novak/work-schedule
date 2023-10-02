@@ -11,26 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import sys
-import environ
 
-from ..env import env_vars
-
-'''
-env = environ.Env()
-is_dev = "runserver" in sys.argv
-
-env_vars = {
-    "HOST": env.str("WORK_SCHEDULE_HOST"),
-    "DJANGO_SECRET_KEY": env.str("WORK_SCHEDULE_DJANGO_SECRET_KEY"),
-    "DB_NAME": env.str("WORK_SCHEDULE_DB_NAME"),
-    "DB_USER": env.str("WORK_SCHEDULE_DB_USER"),
-    "DB_PASSWORD": env.str("WORK_SCHEDULE_DB_PASSWORD"),
-    "STATIC_ROOT": env.str("WORK_SCHEDULE_STATIC_ROOT"),
-    # Optional, use a path without a trailing slash, e.g. "/apps/app1"
-    "SUBLOCATION": env.str("WORK_SCHEDULE_SUBLOCATION")
-}
-'''
+from .env import env_vars
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

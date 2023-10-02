@@ -1,26 +1,16 @@
 from django.shortcuts import render
-from collections import defaultdict
-from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
-from django.http import HttpResponse
 from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm
 from datetime import date, datetime, timedelta
-import environ
 from django.contrib.auth.views import LoginView
 
 from config.env import env_vars
 from schedule.models import Shift
 
-'''
 DEMO_USER_USERNAME = env_vars.get("DEMO_USER_USERNAME")
 DEMO_USER_PASSWORD = env_vars.get("DEMO_USER_PASSWORD")
 is_demo_user = DEMO_USER_USERNAME is not None and DEMO_USER_PASSWORD is not None
-'''
-DEMO_USER_USERNAME = env_vars.get("b")
-DEMO_USER_PASSWORD = env_vars.get("b")
-is_demo_user = True
 
 class login_view(LoginView):
     def get_context_data(self, **kwargs):
