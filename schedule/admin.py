@@ -11,6 +11,17 @@ admin.site.site_header = 'Work Schedule - Manager Panel'
 
 @admin.register(Shift)
 class ShiftAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("date", "user", "start", "end")
+    
+    def has_module_permission(self, request):
+        return True
+
+    def has_add_permission(self, request):
+        return True
+    
+    def has_change_permission(self, request, obj=None):
+         return True
+    
+
 
 #admin.site.register(Shift, ShiftAdmin)

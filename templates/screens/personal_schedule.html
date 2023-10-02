@@ -22,7 +22,6 @@
     <table class="table table-light table-borderless">
       <thead>
         <tr>
-          <th scope="col">Role</th>
           <th scope="col">Start</th>
           <th scope="col">End</th>
         </tr>
@@ -30,13 +29,12 @@
       {% for week_day, one_day_shifts in shifts %}
         <thead>
           <tr class="table-primary">
-            <th scope="col" colspan="3">{{ week_day }}</th>
+            <th scope="col" colspan="2">{{ week_day }}</th>
           </tr>
         </thead>
         <tbody>
           {% for shift in one_day_shifts %}
               <tr>
-                <td scope="row">{{ shift.role }}</td>
                 <td>{{ shift.start }}</td>
                 <td>{{ shift.end }}</td>
               </tr>

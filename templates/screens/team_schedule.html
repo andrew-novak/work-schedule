@@ -22,7 +22,7 @@
     <table class="table table-light table-borderless">
       <thead>
         <tr>
-          <th scope="col">Role</th>
+          <th scope="col">User</th>
           <th scope="col">Start</th>
           <th scope="col">End</th>
         </tr>
@@ -36,7 +36,7 @@
         <tbody>
           {% for shift in one_day_shifts %}
               <tr>
-                <td scope="row">{{ shift.role }}</td>
+                <td>{{ shift.user }}</td>
                 <td>{{ shift.start }}</td>
                 <td>{{ shift.end }}</td>
               </tr>

@@ -14,8 +14,10 @@ from pathlib import Path
 import sys
 import environ
 
+from ..env import env_vars
+
+'''
 env = environ.Env()
-default_runserver_port = "3000"
 is_dev = "runserver" in sys.argv
 
 env_vars = {
@@ -28,6 +30,7 @@ env_vars = {
     # Optional, use a path without a trailing slash, e.g. "/apps/app1"
     "SUBLOCATION": env.str("WORK_SCHEDULE_SUBLOCATION")
 }
+'''
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

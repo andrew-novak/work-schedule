@@ -12,12 +12,30 @@
 
         {% bootstrap_form form %}
         
-        <a class="d-block link-dark" href="{% url 'password_reset' %}">Forgot Password?</a>
+        <a
+            class="d-block link-dark"
+            href="{% url 'password_reset' %}"
+        >
+            Forgot Password?
+        </a>
 
         <button
             type="submit"
             class="btn btn-primary mt-4"
-        >Login</button>
+        >
+            Login
+        </button>
+
+        {% if is_demo_login_available %}
+            <button
+                type="submit"
+                name="demo-login-button"
+                class="btn btn-primary mt-4"
+                formnovalidate="true"
+            >
+                Login as Demo User
+            </button>
+        {% endif %}
     </form>
 </div>
 {% endblock content %}

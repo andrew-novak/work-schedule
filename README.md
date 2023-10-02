@@ -56,7 +56,11 @@
    Optional:
    ```
    WORK_SCHEDULE_SUBLOCATION
+   WORK_SCHEDULE_DEMO_USER_USERNAME
+   WORK_SCHEDULE_DEMO_USER_PASSWORD
    ```
+   > [!WARNING]  
+   > Setting environment variables for a demo user will cause a `Login as demo user` button to appear on the login screen. This button allows users to log in without entering credentials, using the credentials specified in the environment variables. If you do not want this button to appear, do not provide demo user credentials in environment variables. If you desire a demo user button, consider using a staff user rather than a superuser.
 2. Clone repo:
    ```
    git clone https://github.com/andrew-novak/work-schedule work-schedule

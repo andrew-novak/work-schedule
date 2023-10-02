@@ -7,4 +7,4 @@ class Shift(models.Model):
     end = models.TimeField()
 
     def __str__(self):
-        return f"{self.user} - {self.date}" 
+        return f"{self.date} - {self.user} - {self.start} - {self.end}" 
