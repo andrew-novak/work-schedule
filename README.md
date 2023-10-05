@@ -1,4 +1,14 @@
+<img src="https://github.com/andrew-novak/work-schedule/raw/main/static/icons/icon-original.png" alt="Work Schedule web app logo" width="128" height="128">
+
 # Work Schedule
+
+[Demo](https://andrewnovak.co.uk/demos/work-schedule)
+
+The Django-based app allows managers to post work schedules for employers to view. Furthermore, it includes a **Login as demo user** button, facilitating shift exploration and modification without the need for credentials.
+
+Casual employers can access personal and team schedules on the main website, while managers have privileged access to an admin panel through Django admin.
+
+Two types of manager users exist: one with access to shift editing and another with full control, referred to as superusers. The demo account mentioned at the beginning represents the former.
 
 ### To deactivate virtual environment run:
 
